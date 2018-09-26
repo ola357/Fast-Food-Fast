@@ -1,5 +1,5 @@
 {
-  "name": "Fast-Food-Fast",
+  "name": "fast-food-fast",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "node index.js"
   },
   "engines": {
-    "node":"8.11.2"
+    "node": "8.11.2"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ola357/Fast-Food-Fast#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "joi": "^13.6.0"
+    "joi": "^13.6.0",
+    "pg": "^7.4.3"
   }
 }
