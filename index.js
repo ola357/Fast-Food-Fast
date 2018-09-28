@@ -1,11 +1,16 @@
+ 
+const orders = require('./routes/orders');
+const users = require('./routes/users');
+const auth = require('./routes/auth');
 
-const rentals = require('./routes/orders');
 const express = require ('express');
 const app = express();
 const { Pool, Client } = require('pg');
 
 app.use(express.json());
-app.use('/api/v1/orders', rentals);
+app.use('/api/v1/orders', orders);
+app.use('/api/v1/users', users);
+app.use('/api/v1/auth', auth)
 
 
 const pool = new Pool({
@@ -20,14 +25,14 @@ const pool = new Pool({
    .then(() =>console.log("connected to Postgres..."))
    .catch(err => console.error("could NOT connect to Postgres..."));
 
-  // pool.query('SELECT * FROM orders', (err, res) => {
-  //   if (err) {
-  //     console.log(err.stack)
-  //   } else {
-  //     console.log(res.rows)
-  //   }
-  // });
-
+  /* pool.query('SELECT * FROM orders', (err, res) => {
+    if (err) {
+      console.log(err.stack)
+    } else {
+      console.log(res.rows)
+    }
+  });
+ */
 
 
 /* app.get('/', (req, res)=> {
